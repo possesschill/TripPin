@@ -1,0 +1,79 @@
+apply plugin: 'com.android.application'
+apply plugin: 'android-apt'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.0"
+    defaultConfig {
+        applicationId "com.facebook.seagull"
+        minSdkVersion 21
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+        signingConfig signingConfigs.debug
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    productFlavors {
+    }
+}
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+
+    // for logging API calls to LogCat
+
+    // Android Async Http library
+
+    //Permissions
+    apt 'com.github.hotchemi:permissionsdispatcher-processor:2.0.7'
+
+    // design libraries
+    apt 'com.jakewharton:butterknife-compiler:8.1.0'
+
+    // parcel
+    apt 'org.parceler:parceler:1.1.1'
+
+    apt 'com.github.hotchemi:permissionsdispatcher-processor:2.0.7'
+    // Picasso for remote image loading
+
+    //Design Libraries
+
+    // Bottom Bar + FragManagement
+
+    compile 'com.android.support:appcompat-v7:23.4.0'
+    compile 'com.parse:parse-android:1.13.1'
+    compile 'com.parse:parseinterceptors:0.0.2'
+    compile 'com.parse.bolts:bolts-android:1.4.0'
+    compile 'com.google.android.gms:play-services-places:9.2.0'
+    compile 'com.google.android.gms:play-services-location:9.2.0'
+    compile 'com.parse:parseui-login-android:0.0.1'
+    compile 'com.parse:parseui-widget-android:0.0.1'
+    compile 'com.loopj.android:android-async-http:1.4.9'
+    compile 'com.facebook.android:facebook-android-sdk:[4,5)'
+    compile 'com.parse:parsefacebookutils-v4-android:1.10.4@aar'
+    compile 'com.github.hotchemi:permissionsdispatcher:2.0.7'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.jakewharton:butterknife:8.1.0'
+    compile 'com.android.support:cardview-v7:23.4.0'
+    compile 'com.android.support:design:23.4.0'
+    compile 'com.android.support:recyclerview-v7:23.4.0'
+    compile 'com.android.support:gridlayout-v7:23.4.0'
+    compile 'com.android.support:palette-v7:23.4.0'
+    compile 'org.parceler:parceler-api:1.1.1'
+    compile 'com.android.support:support-v4:23.4.0'
+    compile 'de.hdodenhof:circleimageview:2.1.0'
+    compile 'com.roughike:bottom-bar:1.4.0.1'
+    compile 'com.ncapdevi:frag-nav:1.0.3'
+    compile 'com.google.maps.android:android-maps-utils:0.4.+'
+    compile 'android.zetterstrom.com.forecast:forecast:1.1.1'
+}

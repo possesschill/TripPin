@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.facebook.seagull.activities.PartyRouteActivity">
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/llToolbar">
+
+        <android.support.v7.widget.Toolbar
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/toolbar"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:fitsSystemWindows="false"
+            android:background="@color/colorPrimary"
+            app:titleTextColor="@android:color/white"
+            android:transitionName="toolbar">
+        </android.support.v7.widget.Toolbar>
+
+    </LinearLayout>
+
+    <!--<android.support.design.widget.CoordinatorLayout -->
+    <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--xmlns:tools="http://schemas.android.com/tools"-->
+    <!--android:id="@+id/main_content"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_below="@id/toolbar"-->
+    <!--android:nestedScrollingEnabled="true"-->
+    <!--tools:context="com.facebook.seagull.activities.RouteDetailActivity">-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/llToolbar">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appBar"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar">
+
+            <android.support.design.widget.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:minHeight="100dp"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                <RelativeLayout
+                    android:id="@+id/rlTop"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/appBarParty"
+                    app:layout_scrollFlags="scroll">
+
+                    <ImageView
+                        android:id="@+id/ivMain"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerCrop"
+                        app:layout_scrollFlags="scroll" />
+
+                    <View
+                        android:id="@+id/view"
+                        android:layout_width="match_parent"
+                        android:layout_height="170dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="@drawable/gradient_black"
+                        app:layout_scrollFlags="scroll" />
+
+                    <TextView
+                        android:id="@+id/tvPartyName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_above="@+id/rlUser"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="12dp"
+                        android:text="@string/name"
+                        android:textColor="@android:color/white"
+                        android:textSize="25sp"
+                        app:layout_scrollFlags="scroll" />
+
+                    <RelativeLayout
+                        android:id="@+id/rlUser"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginStart="12dp"
+                        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                        app:layout_scrollFlags="scroll">
+
+                        <LinearLayout
+                            android:id="@+id/llDateStuff"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:orientation="horizontal"
+                            app:layout_scrollFlags="scroll">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:gravity="center_vertical"
+                                android:paddingBottom="5dp"
+                                android:paddingTop="5dp"
+                                android:text="Tue, Jul 26, '16"
+                                android:textColor="@color/white"
+                                android:textSize="18sp"
+                                app:layout_scrollFlags="scroll"
+                                android:id="@+id/tvDate" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:gravity="center_vertical"
+                                android:text=" @ "
+                                android:textColor="@color/white"
+                                android:textSize="18sp"
+                                app:layout_scrollFlags="scroll" />
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:gravity="center_vertical"
+                                android:text="5:26 PM"
+                                android:textColor="@color/white"
+                                android:textSize="18sp"
+                                app:layout_scrollFlags="scroll"
+                                android:id="@+id/tvTime" />
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+
+
+                </RelativeLayout>
+
+            </android.support.design.widget.CollapsingToolbarLayout>
+        </android.support.design.widget.AppBarLayout>
+
+
+
+
+
+
+            <RelativeLayout
+                android:id="@+id/rlDetails"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                app:layout_scrollFlags="scroll"
+                android:layout_below="@+id/appBar"
+                android:layout_alignParentStart="true">
+
+
+                <TextView
+                    android:id="@+id/tvPartyDetailsTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginTop="5dp"
+                    android:text="Party Details"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    app:layout_scrollFlags="scroll" />
+
+
+                <TextView
+                    android:id="@+id/tvDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_below="@+id/tvPartyDetailsTitle"
+                    android:layout_marginBottom="12dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginTop="5dp"
+                    android:text="Description"
+                    android:textColor="@android:color/black"
+                    android:textSize="17sp"
+                    app:layout_scrollFlags="scroll"
+                    android:gravity="top|start" />
+
+                <View
+                    android:id="@+id/vGreyBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="12dp"
+                    android:layout_below="@id/tvDetails"
+                    android:background="@color/background_gray"
+                    app:layout_scrollFlags="scroll" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/lvInvitedFriends"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/vGreyBar"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_alignParentBottom="true" />
+
+            </RelativeLayout>
+
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
+
+
+
+

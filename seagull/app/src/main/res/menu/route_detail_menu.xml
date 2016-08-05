@@ -1,0 +1,18 @@
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".activities.ProfileActivity">
+
+    <item
+        android:id="@+id/create_party"
+        android:orderInCategory="0"
+        app:showAsAction="always"
+        android:icon="@drawable/team1"
+        android:title="@string/create_a_party" />
+
+    <item android:id="@+id/menu_location"
+        android:icon="@drawable/locations"
+        app:showAsAction="ifRoom"
+        android:title="@string/view_on_map" />
+</menu>

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.facebook.seagull.activities.RouteDetailActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <include
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/include"
+        android:transitionName="toolbar"/>
+
+    <!-- CoordinatorLayout is used to create scrolling and "floating" effects within a layout -->
+    <!-- This is typically the root layout which wraps the app bar and content -->
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/main_content"
+        android:layout_below="@id/include"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context="com.facebook.seagull.activities.RouteDetailActivity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:tools="http://schemas.android.com/tools">
+
+        <!--app:layout_scrollFlags="scroll|enterAlways" />-->
+
+        <!-- AppBarLayout is a wrapper for a Toolbar in order to apply scrolling effects. -->
+        <!-- Note that AppBarLayout expects to be the first child nested within a CoordinatorLayout -->
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar">
+
+            <android.support.design.widget.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="100dp"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:id="@+id/rlTop"
+                        android:layout_height="200dp"
+                        android:layout_alignParentBottom="true"
+                        app:layout_scrollFlags="scroll">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/ivMain"
+                            android:adjustViewBounds="true"
+                            android:scaleType="centerCrop"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentStart="true"
+                            app:layout_scrollFlags="scroll"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            app:layout_scrollFlags="scroll"
+                            android:layout_height="150dp"
+                            android:layout_alignParentBottom="true"
+                            android:background="@drawable/gradient_black"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_scrollFlags="scroll"
+                            android:text="@string/name"
+                            android:layout_marginStart="12dp"
+                            android:id="@+id/tvName"
+                            android:maxLines="2"
+                            android:ellipsize="end"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="@android:color/white"
+                            android:layout_above="@id/rlUser"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentEnd="true" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginTop="5dp"
+                            android:id="@+id/rlUser"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginEnd="20dp">
+
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_centerVertical="true"
+                                android:id="@+id/ivUser"
+                                android:src="@drawable/com_facebook_tooltip_blue_bottomnub" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:text="@string/name"
+                                android:layout_marginStart="10dp"
+                                android:layout_toEndOf="@id/ivUser"
+                                android:textColor="@android:color/white"
+                                android:id="@+id/tvUserName"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="center_vertical"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                android:gravity="center_vertical"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/white"
+                                android:layout_marginEnd="10dp"
+                                android:layout_centerVertical="true"
+                                android:layout_toStartOf="@+id/btnLike"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:id="@+id/tvNumLikes" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:id="@+id/btnLike"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/heartgray"/>
+
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </android.support.design.widget.CollapsingToolbarLayout>
+
+        </android.support.design.widget.AppBarLayout>
+
+        <RelativeLayout
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:layout_below="@+id/appBar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.design.widget.TabLayout
+                android:id="@+id/sliding_tabs"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/tabLayoutHeight"
+                style="@style/MyCustomTabLayout"
+                app:tabMode="fixed" />
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="1dp"
+                android:layout_below="@id/sliding_tabs"
+                android:background="@android:color/white" />
+        </RelativeLayout>
+
+    </android.support.design.widget.CoordinatorLayout>
+
+</RelativeLayout>

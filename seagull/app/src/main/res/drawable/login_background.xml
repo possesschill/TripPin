@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/gg_background_login"/>
+    <item>
+        <shape>
+            <gradient
+                android:startColor="#64000000" android:endColor="#00000000"
+                android:angle="90"
+                />
+        </shape>
+    </item>
+
+
+</layer-list>
