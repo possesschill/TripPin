@@ -1,8 +1,12 @@
 FBU Android Project - TripPin
 
-TripPin is an android app that allows users to share routes and points of interest together. The app utilizes the [Google MAPS API](https://dev.twitter.com/rest/public) for navigation and route creation.
+TripPin is an android app that allows users to share routes and points of interest together. The app utilizes the [Google MAPS API](https://dev.twitter.com/rest/public) for navigation and route creation. 
+
+$$ Usage
+Simply clone the repository and build onto your emulator (or phone) using Android Studio.
 
 ## Video Walkthrough
+![]( https://youtu.be/fVKiR2UoFyU)
 
 ## Open-source libraries used
 
